@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "waifu_diffusion"
+version = "0.1.0"
+description = "Yes we are generating waifu here"
+authors = ["William Phetsinorath <william.phetsinorath@shikanime.studio>"]
+license = "AGPL v2.0"
+readme = "README.md"
+packages = [{include = "waifu_diffusion"}]
+
+[tool.poetry.dependencies]
+python = "~3.9"
+diffusers = "^0.4.1"
+ftfy = "^6.1.1"
+transformers = "^4.22.2"
+scipy = "^1.9.2"
+torch = [
+    { url = "https://download.pytorch.org/whl/cu116/torch-1.12.1%2Bcu116-cp39-cp39-linux_x86_64.whl", markers = "sys_platform == 'linux'" },
+    { url = "https://download.pytorch.org/whl/cu116/torch-1.12.1%2Bcu116-cp39-cp39-win_amd64.whl", markers = "sys_platform == 'win32'" },
+    { version = "=1.12.1", markers = "sys_platform == 'darwin'" }
+]
+huggingface-hub = "^0.10.0"
+jupyter = "^1.0.0"
+jupyterlab = "^3.4.8"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
